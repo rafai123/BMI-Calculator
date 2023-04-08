@@ -41,7 +41,7 @@ header {
     margin: 2px 0;
 }
 
-input[type="text"] {
+input[type="number"] {
     margin: 8px 0;
     border-radius: 5px;
     padding: 5px 10px;
@@ -58,7 +58,8 @@ input[type="text"] {
     background-color: white;
     padding: 3px 8px;
     border-radius: 0 0 8px 8px;
-    color: white
+    color: white;
+    font-size: 1rem;
 }
 #error-height {
     margin-top: -2px;
