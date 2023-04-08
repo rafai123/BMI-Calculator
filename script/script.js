@@ -14,10 +14,14 @@ weight.addEventListener("input", () => {
     errorWeight.style.backgroundColor = "red";
     errorWeight.innerHTML = `Berat badan yang anda masukkan terlalu besar`;
     weight.style.border = "5px solid red";
+    btnCalculate.setAttribute("class", "disabled")
+    btnCalculate.setAttribute("disabled", "")
   } else if (weight.value == 0 || weight.value == "") {
     errorWeight.style.backgroundColor = "red";
     weight.style.border = "5px solid red";
     errorWeight.innerHTML = `Angka tidak boleh kosong`;
+    btnCalculate.setAttribute("class", "disabled")
+    btnCalculate.setAttribute("disabled", "")
   } else {
     weight.style.border = "";
     errorWeight.style.backgroundColor = "";
@@ -31,10 +35,14 @@ height.addEventListener("input", (event) => {
     errorHeight.style.backgroundColor = "red";
     errorHeight.innerHTML = `Tinggi badan yang anda masukkan terlalu besar`;
     height.style.border = "5px solid red";
+    btnCalculate.setAttribute("class", "disabled")
+    btnCalculate.setAttribute("disabled", "")
   } else if (height.value == 0 || height.value == "") {
     errorHeight.style.backgroundColor = "red";
     height.style.borderColor = "5px solid red";
     errorHeight.innerHTML = `Angka tidak boleh kosong`;
+    btnCalculate.setAttribute("class", "disabled")
+    btnCalculate.setAttribute("disabled", "")
   } else {
     height.style.border = "";
     errorHeight.style.backgroundColor = "";
