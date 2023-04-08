@@ -37,9 +37,22 @@ height.addEventListener("input", (event) => {
 });
 
 const calculateBMI = (event) => {
-//   event.defaultPrevented();
+  event.preventDefault();
   let BMI = weight.value / (height.value / 100) ** 2;
-  alert(BMI);
+  BMI = (Math.round(BMI*10)/10)
+  let isNormal = ""
+    if (BMI <= 18.5) {
+        isNormal = "Underweight"
+    } else if (BMI > 18.5 && BMI <= 24.9) {
+        isNormal = "Normal Weight"
+    } else if (BMI >= 25 && BMI <= 30) {
+        isNormal = "Over Weight"
+    } else if (BMI > 30) {
+        isNormal = "Obesity"
+    }
+
+  console.log((Math.round(BMI*10))/10);
+  result.innerHTML = `Your BMI is <b>${BMI}</b> which means You are <b>${isNormal}<b/>`
 };
 
 btnCalculate.onclick = calculateBMI;
