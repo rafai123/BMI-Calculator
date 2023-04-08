@@ -26,6 +26,8 @@ weight.addEventListener("input", () => {
     weight.style.border = "";
     errorWeight.style.backgroundColor = "";
     errorWeight.innerHTML = ``;
+    btnCalculate.classList.remove("disabled")
+    btnCalculate.removeAttribute("disabled")
   }
 });
 
@@ -47,6 +49,8 @@ height.addEventListener("input", (event) => {
     height.style.border = "";
     errorHeight.style.backgroundColor = "";
     errorHeight.innerHTML = ``;
+    btnCalculate.classList.remove("disabled")
+    btnCalculate.removeAttribute("disabled")
   }
 });
 
@@ -55,18 +59,23 @@ const calculateBMI = (event) => {
   let BMI = weight.value / (height.value / 100) ** 2;
   BMI = Math.round(BMI * 10) / 10;
   let isNormal = "";
+  let color = ""
   if (BMI <= 18.5) {
     isNormal = "Underweight";
+    color = "text-red"
   } else if (BMI > 18.5 && BMI <= 24.9) {
     isNormal = "Normal Weight";
+    color = ""
   } else if (BMI >= 25 && BMI <= 30) {
     isNormal = "Over Weight";
+    color = "text-red"
   } else if (BMI > 30) {
     isNormal = "Obesity";
+    color = "text-red"
   }
 
   console.log(Math.round(BMI * 10) / 10);
-  result.innerHTML = `Your BMI is <b>${BMI}</b> which means You are <b>${isNormal}<b/>`;
+  result.innerHTML = `Your BMI is <b class="text-red">${BMI}</b> which means You are <b class="${color}">${isNormal}<b/>`;
 };
 
 btnCalculate.onclick = calculateBMI;

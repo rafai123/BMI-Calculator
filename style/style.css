@@ -129,3 +129,7 @@ button:hover {
     color: #000;
     transition: all 0.1s;
   }
+
+.text-red {
+    color: #e82222;
+}
