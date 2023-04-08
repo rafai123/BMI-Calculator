@@ -11,7 +11,25 @@
     
 
     <div id="container">
-        <header>BMI Calculator</header>
+        <header>Check your BMI</header>
+        <div class="subtitle">Enter your weight and height below to check your BMI results</div>
+        <form action="" id="bmiCalculator">
+            <div class="input-row">
+                <label for="weight">Put your weight in here (KG)</label><br>
+                <input type="text" id="weight" placeholder="60">
+                <div id="error-weight">dsdfs</div>
+            </div>
+            <div class="input-row">
+                <label for="height">Put your height in here (<i class="fas fa-code-merge    "></i>)</label><br>
+                <input type="text" id="height" placeholder="169">
+                <div id="error-height"></div>
+            </div>
+            <button>Calculate BMI</button>
+
+            <div class="result">
+                Your BMI is <b>21.5</b> which means You are <b>Normal</b>
+            </div>
+        </form>
     </div>
 
     <script src="./script/script.js"></script>
