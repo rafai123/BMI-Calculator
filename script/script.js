@@ -1,3 +1,6 @@
 const weight = document.getElementById("weight")
 const height = document.getElementById("height")
-
+const errorWeight = document.getElementById("error-weight")
+const errorHeight = document.getElementById("error-height")
+const btnCalculate = document.querySelector("button")
+const result = document.querySelector(".result")

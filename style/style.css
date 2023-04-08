@@ -77,6 +77,10 @@ button {
     background-color: #e82222;
     border: 0;
     border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    box-shadow: 1px 1px 5px #444;
 }
 
 .result {
