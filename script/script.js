@@ -7,6 +7,17 @@ const formBMI = document.getElementById("bmiCalculator");
 const result = document.querySelector(".result");
 // weight.value = 0
 
+// const showError = (domError, bgColor, errorText, border) => {
+//   errorWeight.style.backgroundColor = "red";
+//   errorWeight.innerHTML = `Berat badan yang anda masukkan terlalu besar`;
+//   weight.style.border = "5px solid red";
+// }
+
+const showError = (domError, bgColor, errorText, borderStyle) => {
+  domError.style.backgroundColor = bgColor;
+  errorWeight.innerHTML = errorText;
+  weight.style.border = borderStyle;
+}
 
 weight.addEventListener("input", () => {
   weight.value = parseInt(weight.value);
