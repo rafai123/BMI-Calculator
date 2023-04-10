@@ -23,7 +23,7 @@ const disableBtnCalculate = () => {
   btnCalculate.setAttribute("disabled", "");
 };
 const enableBtnCalculate = () => {
-
+  
 }
 
 weight.addEventListener("input", () => {
