@@ -5,13 +5,6 @@ const errorHeight = document.getElementById("error-height");
 const btnCalculate = document.querySelector("button");
 const formBMI = document.getElementById("bmiCalculator");
 const result = document.querySelector(".result");
-// weight.value = 0
-
-// const showError = (domError, bgColor, errorText, border) => {
-//   errorWeight.style.backgroundColor = "red";
-//   errorWeight.innerHTML = `Berat badan yang anda masukkan terlalu besar`;
-//   weight.style.border = "5px solid red";
-// }
 
 const showError = (domError, bgColor, errorText, borderStyle) => {
   domError.style.backgroundColor = bgColor;
@@ -38,30 +31,21 @@ weight.addEventListener("input", () => {
     disableBtnCalculate();
   } else {
     showError(errorWeight, "", "", "");
-    enableBtnCalculate()
+    enableBtnCalculate();
   }
 });
 
 height.addEventListener("input", (event) => {
   height.value = parseInt(height.value);
   if (height.value > 250) {
-    errorHeight.style.backgroundColor = "red";
-    errorHeight.innerHTML = `Tinggi badan yang anda masukkan terlalu besar`;
-    height.style.border = "5px solid red";
-    btnCalculate.setAttribute("class", "disabled");
-    btnCalculate.setAttribute("disabled", "");
+    showError(errorHeight, "red", "Tinggi badan yang anda masukkan terlalu besar", "5px solid red");
+    disableBtnCalculate();
   } else if (height.value == 0 || height.value == "") {
-    errorHeight.style.backgroundColor = "red";
-    height.style.borderColor = "5px solid red";
-    errorHeight.innerHTML = `Angka tidak boleh kosong`;
-    btnCalculate.setAttribute("class", "disabled");
-    btnCalculate.setAttribute("disabled", "");
+    showError(errorHeight, "red", "Tinggi badan tidak boleh kosong", "5px solid red");
+    disableBtnCalculate();
   } else {
-    height.style.border = "";
-    errorHeight.style.backgroundColor = "";
-    errorHeight.innerHTML = ``;
-    btnCalculate.classList.remove("disabled");
-    btnCalculate.removeAttribute("disabled");
+    showError(errorHeight, "", "", "");
+    enableBtnCalculate();
   }
 });
 
