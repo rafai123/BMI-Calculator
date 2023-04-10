@@ -23,18 +23,19 @@ const disableBtnCalculate = () => {
   btnCalculate.setAttribute("disabled", "");
 };
 const enableBtnCalculate = () => {
-  
-}
+  btnCalculate.classList.remove("disabled");
+  btnCalculate.removeAttribute("disabled");
+};
 
 weight.addEventListener("input", () => {
   weight.value = parseInt(weight.value);
 
   if (weight.value > 300) {
     showError(errorWeight, "red", "Berat badan yang anda masukkan terlalu besar", "5px solid red");
-    disableBtnCalculate()
+    disableBtnCalculate();
   } else if (weight.value == 0 || weight.value == "") {
     showError(errorWeight, "red", "Berat badan tidak boleh kosong", "5px solid red");
-    disableBtnCalculate()
+    disableBtnCalculate();
   } else {
     showError(errorWeight, "", "", "");
     btnCalculate.classList.remove("disabled");
