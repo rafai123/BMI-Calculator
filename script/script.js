@@ -23,21 +23,15 @@ weight.addEventListener("input", () => {
   weight.value = parseInt(weight.value);
 
   if (weight.value > 300) {
-    errorWeight.style.backgroundColor = "red";
-    errorWeight.innerHTML = `Berat badan yang anda masukkan terlalu besar`;
-    weight.style.border = "5px solid red";
+    showError(errorWeight, "red", "Berat badan yang anda masukkan terlalu besar", "5px solid red")
     btnCalculate.setAttribute("class", "disabled")
     btnCalculate.setAttribute("disabled", "")
   } else if (weight.value == 0 || weight.value == "") {
-    errorWeight.style.backgroundColor = "red";
-    weight.style.border = "5px solid red";
-    errorWeight.innerHTML = `Angka tidak boleh kosong`;
+    showError(errorWeight, "red", "Berat badan tidak boleh kosong", "5px solid red")
     btnCalculate.setAttribute("class", "disabled")
     btnCalculate.setAttribute("disabled", "")
   } else {
-    weight.style.border = "";
-    errorWeight.style.backgroundColor = "";
-    errorWeight.innerHTML = ``;
+    showError(errorWeight, "", "", "")
     btnCalculate.classList.remove("disabled")
     btnCalculate.removeAttribute("disabled")
   }
