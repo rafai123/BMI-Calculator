@@ -17,23 +17,28 @@ const showError = (domError, bgColor, errorText, borderStyle) => {
   domError.style.backgroundColor = bgColor;
   errorWeight.innerHTML = errorText;
   weight.style.border = borderStyle;
+};
+const disableBtnCalculate = () => {
+  btnCalculate.setAttribute("class", "disabled");
+  btnCalculate.setAttribute("disabled", "");
+};
+const enableBtnCalculate = () => {
+
 }
 
 weight.addEventListener("input", () => {
   weight.value = parseInt(weight.value);
 
   if (weight.value > 300) {
-    showError(errorWeight, "red", "Berat badan yang anda masukkan terlalu besar", "5px solid red")
-    btnCalculate.setAttribute("class", "disabled")
-    btnCalculate.setAttribute("disabled", "")
+    showError(errorWeight, "red", "Berat badan yang anda masukkan terlalu besar", "5px solid red");
+    disableBtnCalculate()
   } else if (weight.value == 0 || weight.value == "") {
-    showError(errorWeight, "red", "Berat badan tidak boleh kosong", "5px solid red")
-    btnCalculate.setAttribute("class", "disabled")
-    btnCalculate.setAttribute("disabled", "")
+    showError(errorWeight, "red", "Berat badan tidak boleh kosong", "5px solid red");
+    disableBtnCalculate()
   } else {
-    showError(errorWeight, "", "", "")
-    btnCalculate.classList.remove("disabled")
-    btnCalculate.removeAttribute("disabled")
+    showError(errorWeight, "", "", "");
+    btnCalculate.classList.remove("disabled");
+    btnCalculate.removeAttribute("disabled");
   }
 });
 
@@ -43,20 +48,20 @@ height.addEventListener("input", (event) => {
     errorHeight.style.backgroundColor = "red";
     errorHeight.innerHTML = `Tinggi badan yang anda masukkan terlalu besar`;
     height.style.border = "5px solid red";
-    btnCalculate.setAttribute("class", "disabled")
-    btnCalculate.setAttribute("disabled", "")
+    btnCalculate.setAttribute("class", "disabled");
+    btnCalculate.setAttribute("disabled", "");
   } else if (height.value == 0 || height.value == "") {
     errorHeight.style.backgroundColor = "red";
     height.style.borderColor = "5px solid red";
     errorHeight.innerHTML = `Angka tidak boleh kosong`;
-    btnCalculate.setAttribute("class", "disabled")
-    btnCalculate.setAttribute("disabled", "")
+    btnCalculate.setAttribute("class", "disabled");
+    btnCalculate.setAttribute("disabled", "");
   } else {
     height.style.border = "";
     errorHeight.style.backgroundColor = "";
     errorHeight.innerHTML = ``;
-    btnCalculate.classList.remove("disabled")
-    btnCalculate.removeAttribute("disabled")
+    btnCalculate.classList.remove("disabled");
+    btnCalculate.removeAttribute("disabled");
   }
 });
 
@@ -65,19 +70,19 @@ const calculateBMI = (event) => {
   let BMI = weight.value / (height.value / 100) ** 2;
   BMI = Math.round(BMI * 10) / 10;
   let isNormal = "";
-  let color = ""
+  let color = "";
   if (BMI <= 18.5) {
     isNormal = "Underweight";
-    color = "text-red"
+    color = "text-red";
   } else if (BMI > 18.5 && BMI <= 24.9) {
     isNormal = "Normal Weight";
-    color = ""
+    color = "";
   } else if (BMI >= 25 && BMI <= 30) {
     isNormal = "Over Weight";
-    color = "text-red"
+    color = "text-red";
   } else if (BMI > 30) {
     isNormal = "Obesity";
-    color = "text-red"
+    color = "text-red";
   }
 
   console.log(Math.round(BMI * 10) / 10);
