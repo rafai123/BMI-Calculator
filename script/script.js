@@ -7,6 +7,7 @@ const formBMI = document.getElementById("bmiCalculator");
 const result = document.querySelector(".result");
 // weight.value = 0
 
+
 weight.addEventListener("input", () => {
   weight.value = parseInt(weight.value);
 

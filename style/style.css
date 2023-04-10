@@ -7,8 +7,21 @@
   box-sizing: border-box;
 }
 
+nav {
+  background-color: #e82222;
+  /* height: 50px; */
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem   ;
+  padding: 20px 30px;
+}
+
 .container-minheight {
-  min-height: 95vh;
+  min-height: 85vh;
 }
 
 #container {
