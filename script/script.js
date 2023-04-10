@@ -6,10 +6,10 @@ const btnCalculate = document.querySelector("button");
 const formBMI = document.getElementById("bmiCalculator");
 const result = document.querySelector(".result");
 
-const showError = (domError, bgColor, errorText, borderStyle) => {
+const showError = (domError, input, bgColor, errorText, borderStyle) => {
   domError.style.backgroundColor = bgColor;
-  errorWeight.innerHTML = errorText;
-  weight.style.border = borderStyle;
+  domError.innerHTML = errorText;
+  input.style.border = borderStyle;
 };
 const disableBtnCalculate = () => {
   btnCalculate.setAttribute("class", "disabled");
@@ -24,27 +24,27 @@ weight.addEventListener("input", () => {
   weight.value = parseInt(weight.value);
 
   if (weight.value > 300) {
-    showError(errorWeight, "red", "Berat badan yang anda masukkan terlalu besar", "5px solid red");
+    showError(errorWeight, weight, "red", "Berat badan yang anda masukkan terlalu besar", "5px solid red");
     disableBtnCalculate();
   } else if (weight.value == 0 || weight.value == "") {
-    showError(errorWeight, "red", "Berat badan tidak boleh kosong", "5px solid red");
+    showError(errorWeight, weight, "red", "Berat badan tidak boleh kosong", "5px solid red");
     disableBtnCalculate();
   } else {
-    showError(errorWeight, "", "", "");
+    showError(errorWeight, weight, "", "", "");
     enableBtnCalculate();
   }
 });
 
-height.addEventListener("input", (event) => {
+height.addEventListener("input", () => {
   height.value = parseInt(height.value);
   if (height.value > 250) {
-    showError(errorHeight, "red", "Tinggi badan yang anda masukkan terlalu besar", "5px solid red");
+    showError(errorHeight, height, "red", "Tinggi badan yang anda masukkan terlalu besar", "5px solid red");
     disableBtnCalculate();
   } else if (height.value == 0 || height.value == "") {
-    showError(errorHeight, "red", "Tinggi badan tidak boleh kosong", "5px solid red");
+    showError(errorHeight, height, "red", "Tinggi badan tidak boleh kosong", "5px solid red");
     disableBtnCalculate();
   } else {
-    showError(errorHeight, "", "", "");
+    showError(errorHeight, height, "", "", "");
     enableBtnCalculate();
   }
 });
