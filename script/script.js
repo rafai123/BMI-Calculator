@@ -38,8 +38,7 @@ weight.addEventListener("input", () => {
     disableBtnCalculate();
   } else {
     showError(errorWeight, "", "", "");
-    btnCalculate.classList.remove("disabled");
-    btnCalculate.removeAttribute("disabled");
+    enableBtnCalculate()
   }
 });
 
